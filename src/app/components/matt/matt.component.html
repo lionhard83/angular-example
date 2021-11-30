@@ -1,0 +1,9 @@
+<div class="blue">
+  <p>matt works {{textInInput}}!</p>
+  <input type="number" [(ngModel)]='obj.x' />
+  <input type="number" [(ngModel)]='obj.y' />
+  <p *ngIf='product() !== 0'>{{product()}}</p>
+
+  <button (click)='textInInput = "Ciao"'>Cambia</button>
+</div>
+

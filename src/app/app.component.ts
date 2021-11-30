@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pippo';
+  title: string = 'pippo';
+  karlActive: boolean = true;
+
+  random() {
+    return Math.random();
+  }
+
+  toggleKarl() {
+    this.karlActive = !this.karlActive;
+  }
 }

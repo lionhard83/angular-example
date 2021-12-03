@@ -1,0 +1,9 @@
+<span *ngFor='let gridItem of grid; let i = index'>
+  <span *ngFor='let gridItemNested of grid[i]; let j=index'>
+    <img (click)='play(i, j)' class="size-img" [src]="'/assets/' + gridItemNested + '.png'" />
+  </span>
+  <br>
+</span>
+
+<p *ngIf='whoWin !== "Empty"'> The winner is :{{whoWin}}</p>
+<button (click)='reset()'>Reset</button>

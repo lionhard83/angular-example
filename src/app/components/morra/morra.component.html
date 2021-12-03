@@ -1,0 +1,12 @@
+<p>Computer choice</p>
+<span *ngFor='let item of items'>
+  <img  [class]="'size-img '+ (lastComputerChoice === item ? 'choice' : '')" [src]="'/assets/' + item + '.png'">
+</span>
+
+<p>My choice</p>
+
+<span *ngFor='let item of items'>
+  <img (click)='play(item)' [class]="'size-img '+ (lastYourChoice === item ? 'choice' : '')" [src]="'/assets/' + item + '.png'">
+</span>
+
+<p>{{whoWinner}}</p>

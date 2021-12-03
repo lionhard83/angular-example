@@ -9,6 +9,8 @@ export class AppComponent {
   title: string = 'pippo';
   karlActive: boolean = true;
 
+  links = ['/karl', '/matt', '/temp', '/morra', '/tris'];
+
   random() {
     return Math.random();
   }

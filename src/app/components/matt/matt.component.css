@@ -1,3 +1,15 @@
 .blue {
   border: 1px solid blue;
 }
+.class1 {
+  background-color: red;
+}
+.class2 {
+  background-color: blue;
+}
+.class3 {
+  background-color: yellow;
+}
+.default {
+  background-color: green;
+}

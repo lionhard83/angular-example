@@ -1,6 +1,13 @@
 <div class="green">
-  <p>karlActive: {{karlActive}}</p>
+  <!-- <p>karlActive: {{karlActive}}</p>
   <app-karl *ngIf='karlActive'></app-karl>
-  <button (click)='toggleKarl()'>Toggle Karl</button>
+  <button (click)='toggleKarl()'>Toggle Karl</button> -->
+  <div *ngFor='let link of links'>
+    <a  [routerLink]='link' >{{'   ' + link + '   '}}</a>
+    <br>
+  </div>
 
+  <p>Ciao</p>
+  <router-outlet></router-outlet>
+  <p>Miao</p>
 </div>

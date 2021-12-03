@@ -1,9 +1,21 @@
 <div class="blue">
+  <input (focus)='doConsoleLog()' (keyup)='isValid()' [(ngModel)]='username' type="text" />
+  <p>La stringa è valida: {{valid}}</p>
   <p>matt works {{textInInput}}!</p>
-  <input type="number" [(ngModel)]='obj.x' />
-  <input type="number" [(ngModel)]='obj.y' />
-  <p *ngIf='product() !== 0'>{{product()}}</p>
+  <input (change)='doConsoleLog()' type="number" [(ngModel)]='obj.x' />
+  <input [type]="typeOfInput" [(ngModel)]='obj.y' />
 
+  <p *ngIf='product() !== 0'>{{product()}}</p>
+  <p *ngIf='show'>Display None</p>
+  <p [hidden]='!show' >Visibility Hidden</p>
+
+  <!-- <div *ngFor='let item of items; let i = index'>
+    <p [class]="casual(i)">{{i + ' ' + item}}</p>
+  </div> -->
+  <p>{{increment}}</p>
+  <button (click)='increment = increment +1'>Increment</button>
+  <button (click)='toggleShow()'>Toggle Show</button>
+  <button (click)='changeTypeOfInput()'>Cambia type</button>
   <button (click)='textInInput = "Ciao"'>Cambia</button>
 </div>
 

@@ -1,0 +1,10 @@
+<audio *ngIf='currentSong' [src]="currentSong.previewUrl" type="audio/x-m4a" controls autoplay >
+  <code> Your browser doesn't support audio tags</code>
+</audio>
+
+<input [(ngModel)]='searchTerm' />
+<button (click)='search()'>Cerca</button>
+
+<div *ngFor='let song of songs'>
+  <app-song (emitter)='setSong($event)' [song]='song'></app-song>
+</div>

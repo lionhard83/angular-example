@@ -1,5 +1,7 @@
 <div class="red">
   <p>karl works!</p>
-  <app-matt></app-matt>
+  <p *ngIf='facts.length === 0'>Caricamento....</p>
+  <p *ngFor='let item of facts'>{{item.fact}}</p>
+  <!-- <app-matt></app-matt> -->
 </div>
 

@@ -1,0 +1,5 @@
+<div class="song" *ngIf='song'>
+  <h1>{{song.trackName}}</h1>
+  <h2>{{song.artistName}}</h2>
+  <img (click)='onClickImage()' [src]='song.artworkUrl100'>
+</div>

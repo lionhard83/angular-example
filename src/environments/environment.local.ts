@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  endpoint: '218.182.18.18/v1'
+  endpoint: 'https://catfact.ninja',
+  iTunesEndpoint: 'https://itunes.apple.com/'
 };

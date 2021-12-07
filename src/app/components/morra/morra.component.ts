@@ -22,12 +22,12 @@ export class MorraComponent implements OnInit {
   play(yourChoice: MorraChoice) {
     this.lastComputerChoice = this.generateRandomChoice();
     this.lastYourChoice =  yourChoice;
-    if (yourChoice === this.lastComputerChoice) {
+    if (this.lastYourChoice === this.lastComputerChoice) {
       this.whoWinner = 'draw';
     } else if (
-      (yourChoice === 'rock' && this.lastComputerChoice === 'scissor') ||
-      (yourChoice === 'paper' && this.lastComputerChoice === 'rock') ||
-      (yourChoice === 'scissor' && this.lastComputerChoice === 'paper')
+      (this.lastYourChoice === 'rock' && this.lastComputerChoice === 'scissor') ||
+      (this.lastYourChoice === 'paper' && this.lastComputerChoice === 'rock') ||
+      (this.lastYourChoice === 'scissor' && this.lastComputerChoice === 'paper')
     ) {
       this.whoWinner = 'you';
     } else {

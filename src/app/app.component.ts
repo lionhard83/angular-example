@@ -9,7 +9,7 @@ export class AppComponent {
   title: string = 'pippo';
   karlActive: boolean = true;
 
-  links = ['/karl', '/matt', '/temp', '/morra', '/tris'];
+  links = ['/karl', '/matt', '/temp', '/morra', '/tris', '/music-list'];
 
   random() {
     return Math.random();

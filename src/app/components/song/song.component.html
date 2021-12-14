@@ -1,5 +1,25 @@
-<div class="song" *ngIf='song'>
+<!-- <div class="song" *ngIf='song'>
   <h1>{{song.trackName}}</h1>
   <h2>{{song.artistName}}</h2>
-  <img (click)='onClickImage()' [src]='song.artworkUrl100'>
+  <img  [src]='song.artworkUrl100'>
+</div> -->
+
+<div
+  (mouseleave)='isEnter = false'
+  (mouseenter)='isEnter = true'
+  [ngClass]='{"shadow-lg" : isActive || isEnter }'
+  *ngIf='song' class="card"
+  style="width: 18rem;"
+>
+  <img class="card-img-top m-w" [src]='song.artworkUrl100' alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">
+      <h1>Titolo</h1>
+      <a [routerLink]='"/artists/" + song.artistId'>{{song.artistName }}</a>
+    </h5>
+    <p class="card-text">{{song.trackName | explicit : 0}}</p>
+    <p class="card-text">{{song.releaseDate | date:'short'}}</p>
+    <span>{{song.collectionPrice | currency}}</span>
+    <div (click)='onClickImage()'class="btn btn-primary">Play</div>
+  </div>
 </div>

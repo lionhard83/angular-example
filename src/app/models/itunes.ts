@@ -17,7 +17,7 @@ export interface Song {
     copyright: string;
     country: string;
     currency: string;
-    releaseDate: Date;
+    releaseDate: string;
     primaryGenreName: string;
     previewUrl: string;
     description: string;
@@ -40,10 +40,39 @@ export interface Song {
     collectionArtistName: string;
 }
 
-export interface ITunesResponse {
+export interface ITunesResponse<T> {
     resultCount: number;
-    results: Song[];
+    results: T[];
 }
+
+export interface Artist  {
+  wrapperType: string;
+  artistType: string;
+  artistName: string;
+  artistLinkUrl: string;
+  artistId: number;
+  amgArtistId: number;
+  primaryGenreName: string;
+  primaryGenreId: number;
+  collectionType: string;
+  collectionId?: number;
+  collectionName: string;
+  collectionCensoredName: string;
+  artistViewUrl: string;
+  collectionViewUrl: string;
+  artworkUrl60: string;
+  artworkUrl100: string;
+  collectionPrice?: number;
+  collectionExplicitness: string;
+  trackCount?: number;
+  copyright: string;
+  country: string;
+  currency: string;
+  releaseDate?: string;
+  contentAdvisoryRating: string;
+}
+
+
 
 
 

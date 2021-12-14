@@ -1,0 +1,33 @@
+
+<div class="container" *ngIf='artist'>
+  <h1>{{artist.artistName}}</h1>
+  <h2>{{artist.primaryGenreName}}</h2>
+  <label for="customRange1" class="form-label">Min 0 - Max {{maxValue}}</label>
+  <p>{{currentValueMin}}</p>
+  <input  min="0"
+  [(ngModel)]="currentValueMin" (ngModelChange)="update($event)"
+  [max]="maxValue"
+  step="0.5"
+  type="range"
+  class="form-range margin-b"
+  id="customRange1">
+  <p>{{currentValueMax}}</p>
+  <input
+  min="0"
+  [(ngModel)]="currentValueMax"
+  (ngModelChange)="update($event)"
+  [max]="maxValue"
+  step="0.5"
+  type="range"
+  class="form-range margin-b"
+  id="customRange2">
+
+  <div class="row">
+    <div class="col-4" *ngFor='let song of songs'>
+      <app-song [song]='song'></app-song>
+    </div>
+  </div>
+</div>
+
+
+

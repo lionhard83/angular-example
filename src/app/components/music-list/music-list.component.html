@@ -1,10 +1,22 @@
-<audio *ngIf='currentSong' [src]="currentSong.previewUrl" type="audio/x-m4a" controls autoplay >
-  <code> Your browser doesn't support audio tags</code>
-</audio>
+<div class="container">
+  <audio class="row" *ngIf='currentSong' [src]="currentSong.previewUrl" type="audio/x-m4a" controls autoplay >
+    <code> Your browser doesn't support audio tags</code>
+  </audio>
+  <div class="row">
+    <div class="col-2">
+      <input [(ngModel)]='searchTerm'  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button (click)='search()' class="btn btn-outline-success my-2 my-sm-0" >{{ 'SEARCH' | translate }}</button>
+    </div>
+  </div>
 
-<input [(ngModel)]='searchTerm' />
-<button (click)='search()'>Cerca</button>
+  <div class="row">
+    <div class="col-4" *ngFor='let song of songs'>
 
-<div *ngFor='let song of songs'>
-  <app-song (emitter)='setSong($event)' [song]='song'></app-song>
+      <app-song
+      (emitter)='setSong($event)'
+      [song]='song'
+      [isActive]="currentSong?.trackId ===  song.trackId"
+      ></app-song>
+    </div>
+  </div>
 </div>

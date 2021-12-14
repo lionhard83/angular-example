@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   endpoint: 'https://catfact.ninja',
-  iTunesEndpoint: 'https://itunes.apple.com/'
+  iTunesEndpoint: 'https://itunes.apple.com'
 };
 
 /*

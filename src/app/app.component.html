@@ -1,4 +1,11 @@
-<div class="green">
+<app-navbar></app-navbar>
+<button (click)='setLang("en")'>{{'ENGLISH' | translate | uppercase}}</button>
+<button (click)='setLang("it")'>{{'ITALIAN' | translate | uppercase}}</button>
+<button (click)='toggleClass()' class="btn btn-primary">Toggle class</button>
+<button (click)='size = size +1 '>Increment</button>
+<button (click)='size = size -1 '>Decrement</button>
+<p>size:{{size}}</p>
+<div class="bg" [ngClass]="currentClass">
   <!-- <p>karlActive: {{karlActive}}</p>
   <app-karl *ngIf='karlActive'></app-karl>
   <button (click)='toggleKarl()'>Toggle Karl</button> -->
@@ -6,8 +13,9 @@
     <a  [routerLink]='link' >{{'   ' + link + '   '}}</a>
     <br>
   </div>
+  <h1 [style.color]='currentClass' >{{ 'START' | translate  }}</h1>
 
-  <p>Ciao</p>
+
   <router-outlet></router-outlet>
-  <p>Miao</p>
+
 </div>

@@ -8,7 +8,10 @@ import { Song } from 'src/app/models/itunes';
 })
 export class SongComponent {
   @Input() song: Song | undefined;
+  @Input() isActive : boolean = false;
   @Output() emitter: EventEmitter<Song> = new EventEmitter();
+  isEnter: boolean = false;
+
 
   constructor() { }
 
